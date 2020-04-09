@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: servicediscovery
+
+#服务器运行端口
+server:
+  port: 8260
+
+#  eureka相关配置
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    wait-time-in-ms-when-sync-empty: 5
+  client:
+    register-with-eureka: false    #是否将该服务注册到服务治理服务器
+    fetch-registry: false      #弹性：应用启动后，不需要从服务治理服务器中同步已注册的服务列表数据至本地
+    service-url:
+      defaultZone: http://localhost:8260/eureka  # 注册中心 - 端口： 8260、工程名： eureka （见 eureka 工程中配置）。
+
+logging:
+  level:
+    org:
+      springframework: info

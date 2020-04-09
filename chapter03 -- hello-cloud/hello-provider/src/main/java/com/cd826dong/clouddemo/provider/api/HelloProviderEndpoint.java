@@ -29,7 +29,8 @@ public class HelloProviderEndpoint {
      * Hello
      * @return
      */
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+//    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    @GetMapping(value = "/{name}")
     public String hello(@PathVariable String name){
         return "Hello, " + name + "!";
     }
